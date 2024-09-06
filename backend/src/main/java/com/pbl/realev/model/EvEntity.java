@@ -13,11 +13,12 @@ public class EvEntity {
   public long id;
 
   // General
-  public String  make;
-  public String  model;
-  public Integer year;
-  public Double  price;
-  public String  imageUrl;
+  public String   make;
+  public String   model;
+  public Integer  year;
+  public Integer   minPrice;
+  public Integer   maxPrice;
+  public String   imageUrl;
 
   // Performance
   public Integer range;
@@ -39,5 +40,4 @@ public class EvEntity {
   public Integer chargePower;
   public enum ChargePort {CCS, TESLA, UNKNOWN}
   public ChargePort chargePort;
-
 }
