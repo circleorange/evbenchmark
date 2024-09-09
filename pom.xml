@@ -92,6 +92,13 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Plugin for dynamic server reload after detection of file modifications -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
+		<!-- Plugin for Project Lombok Annotations -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -113,6 +120,54 @@
 
 	<build>
 		<plugins>
+
+			<!-- Run React build automatically -->
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.15.0</version>
+				<configuration>
+					<nodeVersion>v16.13.0</nodeVersion>
+					<npmVersion>7.24.0</npmVersion>
+				</configuration>
+				<executions>
+					<!-- Install Node and node -->
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+						<phase>generate-resources</phase>
+					</execution>
+
+					<!-- Run npm install -->
+					<execution>
+						<id>npm  install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>install</arguments>
+							<workingDirectory>frontend</workingDirectory>
+						</configuration>
+					</execution>
+
+					<!-- Run npm build -->
+					<execution>
+						<id>npm run build</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run build</arguments>
+							<workingDirectory>frontend</workingDirectory>
+						</configuration>
+					</execution>
+				</executions>
+				
+			</plugin>
+
+			<!-- Plugin for database access -->
 			<plugin>
 				<groupId>org.hibernate.orm.tooling</groupId>
 				<artifactId>hibernate-enhance-maven-plugin</artifactId>
@@ -131,10 +186,13 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<!-- Plugin for Native Image building with GraalVM -->
 			<plugin>
 				<groupId>org.graalvm.buildtools</groupId>
 				<artifactId>native-maven-plugin</artifactId>
 			</plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -147,6 +205,8 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<!-- End of plugins -->
 		</plugins>
 	</build>
 

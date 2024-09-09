@@ -18,23 +18,22 @@ public class EvController {
 
   @GetMapping("/cars")
   public void getAllCars() {
-
+    services.getAllEV();
   }
 
-  @GetMapping("/cars/{id}")
+  @GetMapping("/cars/{ID}")
   public void getCarByID(Long ID) {
-
   }
 
   @PostMapping("/create")
-  public ResponseEntity<EvEntity> createEV(@ModelAttribute EvRequest evRequest) {
+  public ResponseEntity<EvEntity> createCar(@ModelAttribute EvRequest evRequest) {
     var createdEV = services.createEV(evRequest);
 
     return ResponseEntity.ok(createdEV);
   }
 
-  @PutMapping("/update/{id}")
-  public ResponseEntity<EvEntity> updateEV(
+  @PutMapping("/update/{ID}")
+  public ResponseEntity<EvEntity> updateCar(
       @PathVariable Long ID,
       @ModelAttribute EvRequest updateRequest
   ) {
@@ -45,8 +44,8 @@ public class EvController {
         .orElseGet(() -> ResponseEntity.notFound().build());
   }
 
-  @DeleteMapping("delete/{id}")
-  public ResponseEntity<Void> deleteEV(
+  @DeleteMapping("delete/{ID}")
+  public ResponseEntity<Void> deleteeCar(
       @PathVariable Long ID
   ) {
     services.deleteEV(ID);
@@ -55,7 +54,7 @@ public class EvController {
   }
 
   @DeleteMapping("/delete")
-  public ResponseEntity<Void> deleteAllEVs() {
+  public ResponseEntity<Void> deleteAllCars() {
     services.deleteAllEVs();
 
     return ResponseEntity.noContent().build();

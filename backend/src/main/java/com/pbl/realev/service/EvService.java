@@ -13,7 +13,6 @@ import java.util.Optional;
 @Service
 public class EvService {
 
-  @Autowired
   private EvRepository repo;
 
   public List<EvEntity> getManyEVsByID(List<Long> IDs) {
@@ -21,11 +20,7 @@ public class EvService {
   }
 
   public Optional<EvEntity> getEvByID(Long ID) {
-    Optional<EvEntity> foundEV = repo.findById(ID);
-    if (foundEV.isEmpty()) {
-      return Optional.empty();
-    }
-    return foundEV;
+      return repo.findById(ID);
   }
 
   public List<EvEntity> getAllEV() {
@@ -50,7 +45,7 @@ public class EvService {
 
   public Optional<EvEntity> updateEV(Long ID, EvRequest evRequest) {
     Optional<EvEntity> foundEV = repo.findById(ID);
-    if (!foundEV.isPresent()) {
+    if (foundEV.isEmpty()) {
       return Optional.empty();
     }
     EvEntity updatedEV;

@@ -1,13 +1,13 @@
 package com.pbl.realev.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class HomeController {
 
   @GetMapping("/home")
-  public String getHomeMessage() {
-    return "Welcome to the EV Benchmarking web app";
+  public String forwardReactApp() {
+    return "index";
   }
 }

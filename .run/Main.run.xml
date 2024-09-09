@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <module name="realev" />
+    <option name="PROGRAM_PARAMETERS" value="--server.port=8081" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.pbl.realev.EvBenchmarkApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
