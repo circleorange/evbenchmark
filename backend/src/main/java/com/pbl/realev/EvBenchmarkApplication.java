@@ -14,5 +14,4 @@ public class EvBenchmarkApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EvBenchmarkApplication.class, args);
 	}
-
 }
