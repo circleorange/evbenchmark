@@ -12,8 +12,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>backend</module>
 		<module>frontend</module>
+		<module>backend</module>
 	</modules>
 
 	<properties>
@@ -22,6 +22,9 @@
 		<maven.compiler.target>21</maven.compiler.target>
 		<maven.compiler.release>21</maven.compiler.release>
 		<maven-compiler.version>3.13.0</maven-compiler.version>
+
+		<node.version>v20.17.0</node.version>
+		<npm.version>10.8.3</npm.version>
 
 		<spring-boot-framework.version>3.3.3</spring-boot-framework.version>
 		<spring-boot-web.version>3.3.3</spring-boot-web.version>
@@ -42,6 +45,9 @@
 		<lombok.version>1.18.30</lombok.version>
 
 		<graalvm-maven-plugin.version>0.10.2</graalvm-maven-plugin.version>
+		<frontend-maven.version>1.15.0</frontend-maven.version>
+
+		<maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
 
 		<hibernate-core.version>6.6.0.Final</hibernate-core.version>
 		<hibernate-enchance-maven.version>6.6.0.Final</hibernate-enchance-maven.version>
@@ -84,14 +90,6 @@
 	<!-- Dependency management to provide Spring Boot dependencies -->
 	<dependencyManagement>
 		<dependencies>
-			<!--
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-parent</artifactId>
-				<version>${spring-boot-framework.version}</version>
-			</dependency>
-			-->
-
 			<!-- Spring Boot starter to server static files and expose REST endpoints -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>

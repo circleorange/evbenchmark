@@ -8,6 +8,11 @@ public class HomeController {
 
   @GetMapping("/")
   public String forwardReactApp() {
-    return "forward:/index.html";
+    return "index.html";
+  }
+
+  @GetMapping("/abc")
+  public String getCarAdminPage() {
+    return "CarAdminPage.js";
   }
 }
