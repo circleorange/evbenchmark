@@ -1,8 +1,9 @@
 import React from "react";
+import {blueButton, buttonSize, shape} from "../brandStyles";
 
 const FormButton = ({label, onClick}) => {
     return (
-        <button className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors"
+        <button className={`${buttonSize} ${blueButton} ${shape}`}
                 onClick={onClick}
         >{label}</button>
     );

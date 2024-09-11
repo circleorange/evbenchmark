@@ -16,8 +16,8 @@ public class EvEntity {
   public String   make;
   public String   model;
   public Integer  year;
-  public Integer   minPrice;
-  public Integer   maxPrice;
+  public Integer  minPrice;
+  public Integer  maxPrice;
   public String   imageUrl;
 
   // Performance

@@ -12,8 +12,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>frontend</module>
 		<module>backend</module>
+		<module>frontend</module>
 	</modules>
 
 	<properties>
@@ -78,6 +78,11 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
 			<version>6.3.3</version>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.persistence</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
+			<version>3.2.0-M2</version>
 		</dependency>
 	</dependencies>
 

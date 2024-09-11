@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import './index.css';
 import React, {useEffect, useState} from "react";
-import axios from "axios";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/FooterBar";
