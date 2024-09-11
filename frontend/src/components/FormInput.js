@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const FormInput = ({label, placeholder, type="text"}) => {
+const FormInput = ({label, placeholder, type="text", disabled=false}) => {
     const labelPosition = "absolute left-3 top-2";
     const labelEffects = "transition-all duration-200 transform";
     const labelFloating = "-translate-y-7 scale-75 text-blue-600";
@@ -27,6 +27,7 @@ const FormInput = ({label, placeholder, type="text"}) => {
                    value={value}
                    placeholder={isFocused ? placeholder : ''}
                    className={`${inputSize} ${inputBorder} ${inputShape} ${inputEffects}`}
+                   disabled={disabled}
                    onBlur={handleBlur}
                    onFocus={handleFocus}
                    onChange={(e) => setValue(e.target.value)} />

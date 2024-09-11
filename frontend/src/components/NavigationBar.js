@@ -9,6 +9,7 @@ const NavigationBar = () => {
                     <Link to="/">EV Benchmark</Link>
                 </div>
                 <ol className="flex leading-none text-indigo-600 divide-x divide-indigo-400">
+                    <Link to="/" className="text-gray-800 hover:text-gray-400 px-4">Home</Link>
                     <Link to="/abc" className="text-gray-800 hover:text-gray-400 px-4">Car Management</Link>
                     <Link to="/def" className="text-gray-800 hover:text-gray-400 px-4">User Management</Link>
                 </ol>
