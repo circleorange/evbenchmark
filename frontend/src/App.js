@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/FooterBar";
 import CarAdminPage from "./pages/CarAdminPage";
+import HomePage from "./pages/HomePage"
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
                 <NavigationBar />
                 <div className="flex-grow">
                     <Routes>
+                        <Route path="/" element={<HomePage />} />
                         <Route path="/abc" element={<CarAdminPage />} />
                     </Routes>
                 </div>

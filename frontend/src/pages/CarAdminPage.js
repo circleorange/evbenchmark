@@ -2,9 +2,10 @@ import React, {useState} from "react";
 import FormButton from "../components/FormButton";
 import FormInput from "../components/FormInput";
 import BlockInputField from "../components/BlockInputField";
+import ImageAboveCard from "../components/ImageAboveCard";
 
 const CenterForm = () => {
-    const formStyle = "bg-green-100 p-8 mb-8 rounded-3xl shadow-md w-full max-w-5xl";
+    const formStyle = "bg-green-200 p-8 mb-8 rounded-3xl shadow-md w-full max-w-5xl";
     const formHeader = "text-2xl font-bold leading-tight mb-6 text-center";
 
     const [value, setValue] = useState("");
